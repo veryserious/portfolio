@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between px-24">
-      <div className="w-full m:w-600px bg-white min-h-screen">
+    <main className="flex justify-center">
+      <div className="w-full md:w-[600px] bg-white min-h-screen">
         <Block classes="min-h-14">
           <h1>Very Serious</h1>
           <h2>X Projects</h2>
@@ -25,8 +25,11 @@ export default function Home() {
           {/* Profile Image - Make Responsive */}
           <div
             className={
-              "absolute -top-12 h-24 w-24 border-white border-2 border-solid rounded-full overflow-hidden"
+              "absolute -top-8 h-16 w-16 md:scale-150 md:ml-2 border-white border-2 border-solid rounded-full overflow-hidden"
             }
+            style={{
+              transition: "all 0.3s ease-in-out",
+            }}
           >
             <Image
               src="/images/hero.jpeg"
@@ -34,6 +37,12 @@ export default function Home() {
               fill
               style={{ objectFit: "cover" }}
             />
+          </div>
+          {/* Button */}
+          <div className="flex justify-end py-2">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Follow
+            </button>
           </div>
         </Block>
         <Block>
@@ -51,6 +60,23 @@ export default function Home() {
             <span>Joined June 2010</span>
           </div>
         </Block>
+        {/* Tabs */}
+        <div>
+          <div className="flex flex-row">
+            <button className="flex-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+              Tweets
+            </button>
+            <button className="flex-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+              Replies
+            </button>
+            <button className="flex-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+              Media
+            </button>
+            <button className="flex-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">
+              Likes
+            </button>
+          </div>
+        </div>
       </div>
     </main>
   );
